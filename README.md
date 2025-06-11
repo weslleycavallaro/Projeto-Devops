@@ -42,6 +42,11 @@ FASE 2
 
 FASE 3
 
+    Criar o yaml de deployment e service da aplicação e aplicá-los no cluster
+
+        kubectl apply -f deployment.yaml
+
+
 FASE 4
 
 FASE 5
