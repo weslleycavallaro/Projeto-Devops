@@ -43,7 +43,7 @@ pipeline {
         success {
             echo '🚀 Deploy realizado com sucesso!'
             echo '💪 Chuck Norris aprova seu pipeline DevSecOps!'
-            echo "✅ Imagem weslley7/guia-jenkins:${env.BUILD_ID} deployada no Kubernetes"
+            echo "✅ Imagem weslley7/projeto-devops:${env.BUILD_ID} deployada no Kubernetes"
         }
 
         failure {
