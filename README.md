@@ -110,7 +110,7 @@ http://localhost:30001
 * Webhook GitHub configurado apontando para:
 
   ```
-  http://SEU_JENKINS_URL/github-webhook/
+  http://ngrok_url/github-webhook/
   ```
 
 ### Jenkinsfile
@@ -129,5 +129,3 @@ http://localhost:30001
 * Imagem publicada no Docker Hub
 * Aplicação rodando no Kubernetes via NodePort
 * Pipeline Jenkins automatizada com CI/CD completo
-
-Projeto finalizado com sucesso.
