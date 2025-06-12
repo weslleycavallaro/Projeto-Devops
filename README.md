@@ -15,7 +15,7 @@ Este projeto implementa um ciclo completo de DevOps para uma aplicação backend
 ## 🛠️ Tecnologias Utilizadas
 
 * Versionamento de Código: GitHub
-* Linguagem: Python 3.9 + FastAPI
+* Linguagem: Python + FastAPI
 * Container Runtime: Docker
 * Registry de Imagens: Docker Hub
 * Pipeline CI/CD: Jenkins
