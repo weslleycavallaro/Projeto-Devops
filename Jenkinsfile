@@ -21,6 +21,12 @@ pipeline {
             }
         }
 
+        stage('Security Scan com Trivy') {
+            steps {
+                sh 'trivy image weslley7/projeto-devops:latest --exit-code 0 --severity HIGH,CRITICAL --scanners vuln'
+            }
+        }
+
         stage('Deploy no Kubernetes') {
             environment {
                 tag_version = "${env.BUILD_ID}"

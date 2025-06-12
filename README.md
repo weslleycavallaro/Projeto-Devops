@@ -1,10 +1,18 @@
-# Projeto DevOps - Backend FastAPI com CI/CD Kubernetes
+# 🚀 Projeto DevOps - Backend FastAPI com CI/CD Kubernetes
 
-## Visão Geral
+<div style="display: flex; justify-content: space-between; width: 100%;">
+  <img src="images/icons/i-github.png" width="100"/>
+  <img src="images/icons/i-python.png" width="100"/>
+  <img src="images/icons/i-docker.png" width="100"/>
+  <img src="images/icons/i-jenkins.png" width="100"/>
+  <img src="images/icons/i-kubernetes.png" width="100"/>
+</div>
+
+## 📄 Visão Geral
 
 Este projeto implementa um ciclo completo de DevOps para uma aplicação backend FastAPI, contemplando as etapas de desenvolvimento, conteinerização com Docker, versionamento com Git, build e deploy automatizado via Jenkins com deploy final no cluster Kubernetes local.
 
-## Tecnologias Utilizadas
+## 🛠️ Tecnologias Utilizadas
 
 * Versionamento de Código: GitHub
 * Linguagem: Python 3.9 + FastAPI
@@ -13,7 +21,7 @@ Este projeto implementa um ciclo completo de DevOps para uma aplicação backend
 * Pipeline CI/CD: Jenkins
 * Orquestração de Container: Kubernetes (Minikube local)
 
-## Fase 1 - Preparação do Projeto
+## 🗂️ Fase 1 - Preparação do Projeto
 
 ### Atividades
 
@@ -22,7 +30,7 @@ Este projeto implementa um ciclo completo de DevOps para uma aplicação backend
 * Configuração do cluster Kubernetes local (Minikube)
 * Validação local da aplicação com Uvicorn
 
-### Execução Local
+### 💻 Execução Local
 
 ### Estando na pasta do projeto /backend:
 
@@ -39,30 +47,40 @@ Este projeto implementa um ciclo completo de DevOps para uma aplicação backend
 * Instalação das dependências:
 
   ```
-  pip install fastapi uvicorn httpx
+  pip install requirements.txt
   ```
+
 * Execução local:
 
   ```
   uvicorn main:app --reload
   ```
+
+  ![UVICORN](images/1.png)
+
 * Acesso:
 
   ```
-  http://localhost:8000
+  http://0.0.0.0:8000
   ```
 
-## Fase 2 - Conteinerização com Docker
+  ![LOCAL](images/2.png)
+
+
+## 🐳 Fase 2 - Conteinerização com Docker
 
 ### A partir do dockerfile criado:
 
-### Build da Imagem
+### 🔨 Build da Imagem
 
 ```
  docker build -t usuario/projeto-devops:latest .
 ```
 
-### Teste Local
+![BUILD](images/3.png)
+
+
+### 🔬 Teste Local
 
 ```
 docker run -d -p 8000:8000 usuario/projeto-devops:latest
@@ -74,7 +92,9 @@ ou
 docker compose up --build
 ```
 
-### Publicação no Docker Hub
+![LOCAL](images/2.png)
+
+### 📤 Publicação no Docker Hub
 
 ```
 docker login
@@ -84,15 +104,19 @@ docker login
 docker push usuario/projeto-devops:latest
 ```
 
-## Fase 3 - Deploy Manual no Kubernetes
+![PUSH](images/4.png)
+
+## ☸️ Fase 3 - Deploy Manual no Kubernetes
 
 ### Deployment (deployment.yaml)
 
-### Aplicação no Cluster
+### 🔗 Aplicação no Cluster
 
 ```
 kubectl apply -f deployment.yaml
 ```
+
+![DEPLOYMENT](images/5.1.png)
 
 ### Acesso via NodePort
 
@@ -100,14 +124,29 @@ kubectl apply -f deployment.yaml
 http://localhost:30001
 ```
 
-## Fase 4 - CI/CD Completo com Jenkins (Build, Push e Deploy)
+![KUBERNETES](images/5.png)
+
+## 🔄 Fase 4 - CI/CD Completo com Jenkins (Build, Push e Deploy)
 
 ### Pré-requisitos no Jenkins
 
-* Jenkins com Docker, kubectl e kubeconfig configurados
-* Credenciais do Docker Hub armazenadas no Jenkins (dockerhub-credentials)
+* Jenkins com Docker, kubectl e kubeconfig configurados, rodando em:
+
+  ```
+  http://localhost:8080
+  ```
+
+* 🔐 Credenciais do Docker Hub armazenadas no Jenkins (dockerhub-credentials)
+
+![CREDENTIALS](images/6.png)
+
 * Expor a API local do Jenkins via Ngrok
-* Webhook GitHub configurado apontando para:
+
+  ```
+  ngrok http http://localhost:8080
+  ```
+
+* 🪝 Webhook GitHub configurado apontando para:
 
   ```
   http://ngrok_url/github-webhook/
@@ -115,7 +154,9 @@ http://localhost:30001
 
 ### Jenkinsfile
 
-### Fluxo Completo da Pipeline
+### 🔁 Fluxo Completo da Pipeline
+
+![PIPELINE](images/7.png)
 
 1. Desenvolvedor realiza git push no GitHub.
 2. Webhook aciona o Jenkins.
@@ -123,7 +164,9 @@ http://localhost:30001
 4. Jenkins realiza o push da imagem para o Docker Hub.
 5. Jenkins aplica o deploy no cluster Kubernetes.
 
-## Entregáveis Finais
+![FINAL](images/8.png)
+
+## 🎯 Entrega Final Finais
 
 * Código versionado no GitHub
 * Imagem publicada no Docker Hub
