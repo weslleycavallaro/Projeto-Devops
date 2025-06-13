@@ -66,7 +66,7 @@ pipeline {
 
         unstable {
             echo '⚠️ Build instável - Chuck Norris está monitorando'
-sh '''
+            sh '''
             curl -X POST -H 'Content-type: application/json' --data '{"text":"⚠️ Build instável - Chuck Norris está monitorando"}' https://hooks.slack.com/services/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
             '''        }
     }
