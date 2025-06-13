@@ -140,6 +140,10 @@ http://localhost:30001
 
 ![CREDENTIALS](images/6.png)
 
+* Plugin do Chuck Norris adicionado no Jenkins para apoio motivacional
+
+![CHUCKNORRIS](images/9.png)
+
 * Expor a API local do Jenkins via Ngrok
 
   ```
@@ -166,7 +170,7 @@ http://localhost:30001
 4. Jenkins realiza o push da imagem para o Docker Hub.
 5. Trivy realiza o scan da imagem.
 6. Jenkins aplica o deploy no cluster Kubernetes.
-7. Chuck Norris da seu veredito final..
+7. Chuck Norris da seu veredito final.
 
 ![FINAL](images/8.png)
 
