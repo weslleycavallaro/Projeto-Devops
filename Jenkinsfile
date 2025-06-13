@@ -51,24 +51,21 @@ pipeline {
             echo '💪 Chuck Norris aprova seu pipeline DevSecOps!'
             echo "✅ Imagem weslley7/projeto-devops:${env.BUILD_ID} deployada no Kubernetes"
             sh '''
-            curl -X POST -H 'Content-type: application/json' --data '{"text":"💪 Chuck Norris aprova seu pipeline DevSecOps!"}' https://hooks.slack.com/services/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
-            '''
+            curl -X POST -H 'Content-type: application/json' --data '{"text":"💪 Chuck Norris aprova seu pipeline DevSecOps!"}' https://hooks.slack.com/services/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            '''
         }
 
         failure {
             echo '❌ Build falhou, mas Chuck Norris nunca desiste!'
             echo '🔍 Chuck Norris está investigando o problema...'
             sh '''
-            curl -X POST -H 'Content-type: application/json' --data '{"text":"❌ Build falhou, mas Chuck Norris nunca desiste!"}' https://hooks.slack.com/services/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
-            '''
+            curl -X POST -H 'Content-type: application/json' --data '{"text":"❌ Build falhou, mas Chuck Norris nunca desiste!"}' https://hooks.slack.com/services/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            '''
             echo '💡 Verifique: Docker build, DockerHub push ou Kubernetes deploy'
         }
 
         unstable {
             echo '⚠️ Build instável - Chuck Norris está monitorando'
             sh '''
-            curl -X POST -H 'Content-type: application/json' --data '{"text":"⚠️ Build instável - Chuck Norris está monitorando"}' https://hooks.slack.com/services/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
-            '''        
+            curl -X POST -H 'Content-type: application/json' --data '{"text":"⚠️ Build instável - Chuck Norris está monitorando"}' https://hooks.slack.com/services/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            '''        
         }
     }
 }
