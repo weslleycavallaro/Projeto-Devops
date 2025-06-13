@@ -152,6 +152,8 @@ http://localhost:30001
   http://ngrok_url/github-webhook/
   ```
 
+* Slack configurado para receber solicitações HTTP através do webhook
+
 ### Jenkinsfile
 
 ### 🔁 Fluxo Completo da Pipeline
