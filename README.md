@@ -158,11 +158,13 @@ http://localhost:30001
 
 ![PIPELINE](images/7.png)
 
-1. Desenvolvedor realiza git push no GitHub.
+1. Git push no GitHub.
 2. Webhook aciona o Jenkins.
 3. Jenkins realiza o build da imagem Docker.
 4. Jenkins realiza o push da imagem para o Docker Hub.
-5. Jenkins aplica o deploy no cluster Kubernetes.
+5. Trivy realiza o scan da imagem.
+6. Jenkins aplica o deploy no cluster Kubernetes.
+7. Chuck Norris da seu veredito final..
 
 ![FINAL](images/8.png)
 
